@@ -1,0 +1,97 @@
+﻿<dx:DXWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:local="clr-namespace:CodingChallenge_Yahtzee" x:Class="CodingChallenge_Yahtzee.MainWindow"
+        Title="MainWindow" Height="1000" Width="800"
+        WindowStartupLocation="CenterScreen" Background="#FFD1C786" BorderEffectActiveColor="#FFD1C786" BorderEffectInactiveColor="#FFD1C786" Foreground="#FFD1C786" BorderThickness="0" DataContext="{dxmvvm:ViewModelSource Type={x:Type local:MainWindowViewModel}}">
+    <Grid>
+        <dxdo:DockLayoutManager Grid.ColumnSpan="3" >
+            <dxdo:LayoutGroup Caption="LayoutRoot" Orientation="Vertical">
+                <dxdo:LayoutPanel Caption="Panel1" BorderBrush="#FFCA2B27" Foreground="#FFCA2B27" Background="#FFCA2B27" ShowCaption="False">
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Image x:Name="Image" HorizontalAlignment="Center" Height="200" Margin="0,0,0,0" VerticalAlignment="Center" Width="200" Source="pack://application:,,,/CodingChallenge_Yahtzee;component/s-l1000.jpg"/>
+                        <Button x:Name="Button"  IsEnabled="{Binding canScore[0]}" Content="Score" Margin="116,70,578,189" Height="55" FontFamily="Stencil" FontSize="24" Background="#FFCDCDCD" dx:ThemeManager.ThemeName="None" Width="80" Command="{Binding onesCommand}"/>
+                        <Button x:Name="Button1" IsEnabled="{Binding canScore[1]}" Content="Score" Margin="111,130,573,129" Height="55" FontFamily="Stencil" FontSize="24" Background="#FFCDCDCD" dx:ThemeManager.ThemeName="None" Width="80" Command="{Binding twosCommand}"/>
+                        <Button x:Name="Button2" IsEnabled="{Binding canScore[2]}" Content="Score" Margin="111,190,573,69" Height="55" FontFamily="Stencil" FontSize="24" Background="#FFCDCDCD" dx:ThemeManager.ThemeName="None" Width="80" Command="{Binding threesCommand}"/>
+                        <Button x:Name="Button3" IsEnabled="{Binding canScore[3]}" Content="Score" Margin="592,70,106,189" Height="55" FontFamily="Stencil" FontSize="24" Background="#FFCDCDCD" dx:ThemeManager.ThemeName="None" Width="80" Command="{Binding foursCommand}"/>
+                        <Button x:Name="Button4" IsEnabled="{Binding canScore[4]}" Content="Score" Margin="592,128,106,131" Height="55" FontFamily="Stencil" FontSize="24" Background="#FFCDCDCD" dx:ThemeManager.ThemeName="None" Width="80" Command="{Binding fivesCommand}"/>
+                        <Button x:Name="Button5" IsEnabled="{Binding canScore[5]}"  Content="Score" Margin="592,189,106,70" Height="55" FontFamily="Stencil" FontSize="24" Background="#FFCDCDCD" dx:ThemeManager.ThemeName="None" Width="80" Command="{Binding sixesCommand}"/>
+                        <TextBox x:Name="ScoreTextBox" Text="1's" Margin="28,53,681,174"  Width="55" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="ScoreTextBox1" Text="2's" Margin="28,113,681,114" Width="55" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="ScoreTextBox2" Text="3's" Margin="28,173,681,54" Width="55" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="ScoreTextBox3" Text="4's" Margin="496,53,213,174" Width="55"  Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="ScoreTextBox4" Text="5's" Margin="496,113,213,114" Width="55" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="ScoreTextBox5" Text="6's" Margin="496,173,213,54" Width="55" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="TextBox6" Text="{Binding scoring[0], UpdateSourceTrigger=PropertyChanged}" Margin="228,53,501,174" Width="55" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="TextBox7" Text="{Binding scoring[1], UpdateSourceTrigger=PropertyChanged}" Margin="228,113,501,114" Width="55" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="TextBox8" Text="{Binding scoring[2], UpdateSourceTrigger=PropertyChanged}" Margin="228,173,501,54" Width="55" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="TextBox9" Text="{Binding scoring[3], UpdateSourceTrigger=PropertyChanged}" Margin="701,53,28,174" Width="55" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="TextBox10" Text="{Binding scoring[4], UpdateSourceTrigger=PropertyChanged}" Margin="701,113,28,114" Width="55" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="TextBox11" Text="{Binding scoring[5], UpdateSourceTrigger=PropertyChanged}" Margin="701,173,28,54" Width="55" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBlock x:Name="TextBlock99" HorizontalAlignment="Left" Margin="172,263,0,0" TextWrapping="Wrap" Text="Bonus If Over 62:" VerticalAlignment="Top" FontFamily="Stencil" FontSize="24" Width="217" Foreground="#FFD1C786"/>
+                        <TextBox x:Name="TextBox99" Text="{Binding scoring[6], UpdateSourceTrigger=PropertyChanged}"  Width="55" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24" Margin="393,249,336,10"/>
+                    </Grid>
+                </dxdo:LayoutPanel>
+                <dxdo:LayoutPanel Caption="Panel2" ItemHeight="0.5*" ShowCaption="False" Background="#FFCA2B27">
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <dxe:TextEdit Width="100" Height="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding dieIn[2]}" FontFamily="Stencil" FontSize="48" Margin="343,10,341,44"/>
+                        <dxe:TextEdit Width="100" Height="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding dieIn[3]}" FontFamily="Stencil" FontSize="48" Margin="492,10,192,44"/>
+                        <dxe:TextEdit Width="100" Height="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding dieIn[4]}" FontFamily="Stencil" FontSize="48" Margin="642,10,42,44"/>
+                        <dxe:TextEdit Width="100" Height="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding dieIn[1]}" FontFamily="Stencil" FontSize="48" Margin="193,10,491,44"/>
+                        <dxe:TextEdit Width="100" Height="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="{Binding dieIn[0]}" FontFamily="Stencil" FontSize="48" Margin="42,10,642,44"/>
+                        <TextBlock x:Name="TextBlock" Margin="10,0,0,10" Height="21" Width="50" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontFamily="Stencil" FontSize="18" Text="Hold:" Foreground="#FFD1C786"/>
+                        <CheckBox x:Name="CheckBox"  Height="22" Width="22" Margin="85,123,677,10" IsChecked="{Binding hold[0]}"/>
+                        <CheckBox x:Name="CheckBox1" Height="22" Width="22" Margin="236,123,526,10" IsChecked="{Binding hold[1]}"/>
+                        <CheckBox x:Name="CheckBox2" Height="22" Width="22" Margin="386,123,376,10" IsChecked="{Binding hold[2]}"/>
+                        <CheckBox x:Name="CheckBox3" Height="22" Width="22" Margin="535,123,227,10" IsChecked="{Binding hold[3]}"/>
+                        <CheckBox x:Name="CheckBox4" Height="22" Width="22" Margin="685,123,77,10"  IsChecked="{Binding hold[4]}"/>
+
+                    </Grid>
+                </dxdo:LayoutPanel>
+                <dxdo:LayoutPanel Caption="Panel3" ItemHeight="0.5*" ShowCaption="False" Background="#FFCA2B27">
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <TextBox x:Name="textBox" Text="{Binding scoring[15]}" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24" Margin="184,18,535,82"/>
+                        <TextBox x:Name="textBox1" Text="{Binding scoring[16]}" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24" Margin="184,83,535,17"/>
+                        <TextBox x:Name="textBox2" Text="{Binding scoring[17]}" Width="100" Height="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Stencil" FontSize="36" Margin="341,35,343,20" />
+                        <Button x:Name="button" Content="Next Turn" FontFamily="Stencil" FontSize="24" HorizontalAlignment="Right" VerticalAlignment="Top" Width="223" Margin="0,88,20,0" Height="50" dx:ThemeManager.ThemeName="None" Background="#FFCDCDCD" Command="{Binding nextTurnCommand}" IsEnabled="{Binding canNext}"/>
+                        <Button x:Name="button1" Content="Roll Dice" FontFamily="Stencil" FontSize="24" HorizontalAlignment="Right" VerticalAlignment="Top" Width="223" Margin="0,18,20,0" Height="50" dx:ThemeManager.ThemeName="None" Background="#FFCDCDCD" Command="{Binding rollCommand}" IsEnabled="{Binding canRoll}"/>
+                        <TextBlock x:Name="textBlock"  Text="Lower Score:" FontFamily="Stencil" FontSize="24" Height="30" Width="217" Foreground="#FFD1C786" Margin="10,96,557,28"/>
+                        <TextBlock x:Name="textBlock1" Text="Upper Score:" FontFamily="Stencil" FontSize="24" Height="30" Width="217" Foreground="#FFD1C786" Margin="10,31,556,93"/>
+                        <TextBlock x:Name="textBlock2" Text="Total Score" FontFamily="Stencil" FontSize="24" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFD1C786"/>
+
+                    </Grid>
+                </dxdo:LayoutPanel>
+                <dxdo:LayoutPanel Caption="panel4" ShowCaption="False" Background="#FFCA2B27">
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <Image x:Name="Image1" HorizontalAlignment="Center" Height="150" Margin="0,0,0,0" VerticalAlignment="Center" Width="150" Source="pack://application:,,,/CodingChallenge_Yahtzee;component/s-l1000.jpg"/>
+                        <TextBox x:Name="TextBox" Text="3 of a Kind" Margin="10,35,604,224"  Width="170" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="TextBox1" Text="4 of a Kind" Margin="10,95,604,164"  Width="170" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="TextBox2" Text="YAHTZEE!" Margin="10,155,604,104"  Width="170" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="TextBox3" Text="Bonus" Margin="10,215,604,44"  Width="170" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="TextBox4" Text="Lg Straight" Margin="459,35,155,224"  Width="170" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="TextBox5" Text="Sm Straight" Margin="459,95,155,164"  Width="170" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="TextBox12" Text="Full House" Margin="459,155,155,104"  Width="170" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <TextBox x:Name="TextBox13" Text="Chance" Margin="459,215,155,44"  Width="170" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Stencil" FontSize="24"/>
+                        <Button x:Name="Button6" IsEnabled="{Binding canScore[14]}" Content="Score" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="55" FontFamily="Stencil" FontSize="24" Background="#FFCDCDCD" dx:ThemeManager.ThemeName="None" Margin="629,215,65,44" Command="{Binding chanceCommand}"/>
+                        <Button x:Name="Button7" IsEnabled="{Binding canScore[13]}" Content="Score" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="55" FontFamily="Stencil" FontSize="24" Background="#FFCDCDCD" dx:ThemeManager.ThemeName="None" Margin="629,155,65,104" Command="{Binding fullHouseCommand}"/>
+                        <Button x:Name="Button8" IsEnabled="{Binding canScore[12]}" Content="Score" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="55" FontFamily="Stencil" FontSize="24" Background="#FFCDCDCD" dx:ThemeManager.ThemeName="None" Margin="629,94,65,165" Command="{Binding smStraightCommand}"/>
+                        <Button x:Name="Button9" IsEnabled="{Binding canScore[11]}" Content="Score" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="55" FontFamily="Stencil" FontSize="24" Background="#FFCDCDCD" dx:ThemeManager.ThemeName="None" Margin="629,35,65,224" Command="{Binding lgStraightCommand}"/>
+                        <Button x:Name="Buttona" IsEnabled="{Binding canScore[10]}" Content="Score" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="55" FontFamily="Stencil" FontSize="24" Background="#FFCDCDCD" dx:ThemeManager.ThemeName="None" Margin="180,215,514,44" Command="{Binding yBonusCommand}"/>
+                        <Button x:Name="Buttonb" IsEnabled="{Binding canScore[9]}" Content="Score" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="55" FontFamily="Stencil" FontSize="24" Background="#FFCDCDCD" dx:ThemeManager.ThemeName="None" Margin="180,155,514,104" Command="{Binding yahtzeeCommand}"/>
+                        <Button x:Name="Buttonc" IsEnabled="{Binding canScore[8]}" Content="Score" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="55" FontFamily="Stencil" FontSize="24" Background="#FFCDCDCD" dx:ThemeManager.ThemeName="None" Margin="180,95,514,164" Command="{Binding kind4Command}"/>
+                        <Button x:Name="Buttond" IsEnabled="{Binding canScore[7]}" Content="Score" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="55" FontFamily="Stencil" FontSize="24" Background="#FFCDCDCD" dx:ThemeManager.ThemeName="None" Margin="180,35,514,224" Command="{Binding kind3Command}"/>
+                        <TextBox x:Name="TextBox21" HorizontalContentAlignment="Center" Height="55" Text="{Binding scoring[7]}" VerticalContentAlignment="Center" Width="55" FontFamily="Stencil" FontSize="24" Margin="270,35,459,224"/>
+                        <TextBox x:Name="TextBox14" HorizontalContentAlignment="Center" Height="55" Text="{Binding scoring[8]}" VerticalContentAlignment="Center" Width="55" FontFamily="Stencil" FontSize="24" Margin="270,95,460,164"/>
+                        <TextBox x:Name="TextBox15" HorizontalContentAlignment="Center" Height="55" Text="{Binding scoring[9]}" VerticalContentAlignment="Center" Width="55" FontFamily="Stencil" FontSize="24" Margin="270,155,460,104"/>
+                        <TextBox x:Name="TextBox16" HorizontalContentAlignment="Center" Height="55" Text="{Binding scoring[10]}" VerticalContentAlignment="Center" Width="55" FontFamily="Stencil" FontSize="24" Margin="270,215,460,44"/>
+                        <TextBox x:Name="TextBox17" HorizontalContentAlignment="Center" Height="55" Text="{Binding scoring[11]}" VerticalContentAlignment="Center" Width="55" FontFamily="Stencil" FontSize="24" Margin="719,35,10,224"/>
+                        <TextBox x:Name="TextBox18" HorizontalContentAlignment="Center" Height="55" Text="{Binding scoring[12]}" VerticalContentAlignment="Center" Width="55" FontFamily="Stencil" FontSize="24" Margin="719,94,10,165"/>
+                        <TextBox x:Name="TextBox19" HorizontalContentAlignment="Center" Height="55" Text="{Binding scoring[13]}" VerticalContentAlignment="Center" Width="55" FontFamily="Stencil" FontSize="24" Margin="719,154,10,105"/>
+                        <TextBox x:Name="TextBox20" HorizontalContentAlignment="Center" Height="55" Text="{Binding scoring[14]}" VerticalContentAlignment="Center" Width="55" FontFamily="Stencil" FontSize="24" Margin="719,214,10,45"/>
+                    </Grid>
+                </dxdo:LayoutPanel>
+            </dxdo:LayoutGroup>
+        </dxdo:DockLayoutManager>
+    </Grid>
+</dx:DXWindow>
