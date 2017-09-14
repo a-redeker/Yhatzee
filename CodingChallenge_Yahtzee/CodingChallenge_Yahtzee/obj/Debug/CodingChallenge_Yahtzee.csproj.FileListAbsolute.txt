@@ -43,3 +43,6 @@ C:\Users\aredeker\Documents\Visual Studio 2015\Projects\CodingChallenge_Yahtzee\
 C:\Users\aredeker\Documents\Visual Studio 2015\Projects\CodingChallenge_Yahtzee\CodingChallenge_Yahtzee\obj\Debug\CodingChallenge_Yahtzee.pdb
 C:\Users\aredeker\Documents\Visual Studio 2015\Projects\CodingChallenge_Yahtzee\CodingChallenge_Yahtzee\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\aredeker\Documents\Visual Studio 2015\Projects\CodingChallenge_Yahtzee\CodingChallenge_Yahtzee\obj\Debug\CodingChallenge_Yahtzee_MarkupCompile.lref
+C:\Users\aredeker\Documents\Visual Studio 2015\Projects\Yhatzee\CodingChallenge_Yahtzee\CodingChallenge_Yahtzee\bin\Debug\CodingChallenge_Yahtzee.exe.config
+C:\Users\aredeker\Documents\Visual Studio 2015\Projects\Yhatzee\CodingChallenge_Yahtzee\CodingChallenge_Yahtzee\obj\Debug\CodingChallenge_Yahtzee.exe
+C:\Users\aredeker\Documents\Visual Studio 2015\Projects\Yhatzee\CodingChallenge_Yahtzee\CodingChallenge_Yahtzee\obj\Debug\CodingChallenge_Yahtzee.pdb
